@@ -37,7 +37,7 @@ server.route({
     method: 'GET',
     path:'/users', 
     handler: (request, reply)=> {
-        reply({
+        return({
             name : 'manuel',
             lastname: 'otero'
         })
