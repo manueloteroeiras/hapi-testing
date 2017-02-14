@@ -16,8 +16,8 @@ let transporter = nodemailer.createTransport({
 // Create a server with a host and port
 const server = new Hapi.Server();
 server.connection({ 
-    host: 'localhost', 
-    port: 8000 
+    host: '0.0.0.0', 
+    port: process.env.PORT || 8000
 });
 
 // Add the route
