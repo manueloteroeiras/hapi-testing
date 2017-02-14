@@ -40,7 +40,7 @@ server.route({
         reply({
             name : 'manuel',
             lastname: 'otero'
-        })
+        }.code(200))
     }
 });
 
