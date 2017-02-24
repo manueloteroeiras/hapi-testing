@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-
 import Hapi from 'hapi';
 
 import config from './config/config';
