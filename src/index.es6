@@ -19,6 +19,13 @@ server.connection({
 
 // Add the route
 server.route({
+    method: 'GET',
+    path:'/', 
+    handler: (request, reply)=> reply("Working!")
+});
+
+// Add the route
+server.route({
     method: 'POST',
     path:'/send-email', 
     handler: (request, reply)=> reply(sendEmail(request.payload,config))

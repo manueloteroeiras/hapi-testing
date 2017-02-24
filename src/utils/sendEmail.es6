@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 // templeates
-import welcome from '../templeates/welcome';
+import welcome from '../templates/welcome';
 
     // create reusable transporter object using the default SMTP transport
 
