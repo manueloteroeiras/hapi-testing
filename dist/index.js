@@ -1,9 +1,5 @@
 'use strict';
 
-var _dotenv = require('dotenv');
-
-var _dotenv2 = _interopRequireDefault(_dotenv);
-
 var _hapi = require('hapi');
 
 var _hapi2 = _interopRequireDefault(_hapi);
