@@ -3,19 +3,17 @@ import nodemailer from 'nodemailer';
 // templeates
 import welcome from '../templates/welcome';
 
+
+
     // create reusable transporter object using the default SMTP transport
+const sendEmail = async (props, config) =>{
 
-
-
-const sendEmail = (props, config) =>{
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: config.GMAIL_USER,
-            pass: config.GMAIL_PASS
-        }
-    });
-
+    let auth = {
+        user: config.GMAIL_USER,
+        pass: config.GMAIL_PASS
+    }
+    const transporter = nodemailer.createTransport({ service: 'gmail', auth });
+    
     let mailOptions = {
         from: props.from || 'customservice@hapi.com',
         to: props.to || '', 
@@ -24,7 +22,7 @@ const sendEmail = (props, config) =>{
         html: welcome(props) // html body
     }
 
-    transporter.sendMail( mailOptions ,(error, info) => (error) ? 500 : 200 );
+    return await transporter.sendMail(mailOptions)
 }
 
 

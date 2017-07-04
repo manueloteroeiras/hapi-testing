@@ -26,7 +26,13 @@ server.route({
 server.route({
     method: 'POST',
     path:'/send-email', 
-    handler: (request, reply)=> reply(sendEmail(request.payload,config))
+    handler: (request, reply)=> {
+
+        sendEmail(request.payload,config)
+        .then((data)=> reply({ message: "Send Success", data }))
+        .catch((error) => reply('Error to sent!'))
+        
+    }
 });
 
 

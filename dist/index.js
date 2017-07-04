@@ -39,7 +39,12 @@ server.route({
     method: 'POST',
     path: '/send-email',
     handler: function handler(request, reply) {
-        return reply((0, _sendEmail2.default)(request.payload, _config2.default));
+
+        (0, _sendEmail2.default)(request.payload, _config2.default).then(function (data) {
+            return reply({ message: "Send Success", data: data });
+        }).catch(function (error) {
+            return reply('Error to sent!');
+        });
     }
 });
 
