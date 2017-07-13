@@ -4,11 +4,16 @@ import config from './config/config';
 
 import sendEmail from './utils/sendEmail';
 
+const data = {
+    GMAIL_USER: process.env.GMAIL_USER,
+    GMAIL_PASS: process.env.GMAIL_PASS
+}
+
 // Create a server with a host and port
 const server = new Hapi.Server();
 
 server.connection({ 
-    host: '0.0.0.0', 
+    host: 'localhost', 
     port: process.env.PORT || 8000,
     routes : {
         cors : true
@@ -28,7 +33,7 @@ server.route({
     path:'/send-email', 
     handler: (request, reply)=> {
 
-        sendEmail(request.payload,config)
+        sendEmail(request.payload, data )
         .then((data)=> reply({ message: "Send Success", data }))
         .catch((error) => reply('Error to sent!'))
         

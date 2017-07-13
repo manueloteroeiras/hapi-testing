@@ -14,11 +14,16 @@ var _sendEmail2 = _interopRequireDefault(_sendEmail);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var data = {
+    GMAIL_USER: process.env.GMAIL_USER,
+    GMAIL_PASS: process.env.GMAIL_PASS
+};
+
 // Create a server with a host and port
 var server = new _hapi2.default.Server();
 
 server.connection({
-    host: '0.0.0.0',
+    host: 'localhost',
     port: process.env.PORT || 8000,
     routes: {
         cors: true
@@ -40,7 +45,7 @@ server.route({
     path: '/send-email',
     handler: function handler(request, reply) {
 
-        (0, _sendEmail2.default)(request.payload, _config2.default).then(function (data) {
+        (0, _sendEmail2.default)(request.payload, data).then(function (data) {
             return reply({ message: "Send Success", data: data });
         }).catch(function (error) {
             return reply('Error to sent!');
