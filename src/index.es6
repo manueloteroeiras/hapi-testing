@@ -13,7 +13,7 @@ const data = {
 const server = new Hapi.Server();
 
 server.connection({ 
-    host: '0.0.0.0', 
+    host: (process.env.DEV) ? 'localhost' : '0.0.0.0', 
     port: process.env.PORT || 8000,
     routes : {
         cors : true
@@ -32,9 +32,13 @@ server.route({
     method: 'POST',
     path:'/send-email', 
     handler: (request, reply)=> {
-
         sendEmail(request.payload, data )
-        .then((data)=> reply({ message: "Send Success", data }))
+        .then((data)=> {
+            console.log('====================================');
+            console.log({ msg: 'SEND_SUCCESS', data });
+            console.log('====================================');
+            reply({ message: "Send Success", data })
+        })
         .catch((error) => reply('Error to sent!'))
         
     }

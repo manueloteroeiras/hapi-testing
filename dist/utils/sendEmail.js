@@ -40,7 +40,7 @@ var sendEmail = function () {
                             to: props.to || '',
                             subject: props.subject, // Subject line
                             text: props.text,
-                            html: (0, _welcome2.default)(props) // html body
+                            html: props.type == 'welcome' ? (0, _welcome2.default)(props) : props.html // html body
                         };
                         _context.next = 5;
                         return transporter.sendMail(mailOptions);

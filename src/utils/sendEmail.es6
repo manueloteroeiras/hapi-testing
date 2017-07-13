@@ -19,7 +19,7 @@ const sendEmail = async (props, config) =>{
         to: props.to || '', 
         subject: props.subject, // Subject line
         text: props.text,
-        html: welcome(props) // html body
+        html: ( props.type == 'welcome' ) ? welcome(props) : props.html // html body
     }
 
     return await transporter.sendMail(mailOptions)

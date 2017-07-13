@@ -23,7 +23,7 @@ var data = {
 var server = new _hapi2.default.Server();
 
 server.connection({
-    host: '0.0.0.0',
+    host: process.env.DEV ? 'localhost' : '0.0.0.0',
     port: process.env.PORT || 8000,
     routes: {
         cors: true
@@ -44,9 +44,11 @@ server.route({
     method: 'POST',
     path: '/send-email',
     handler: function handler(request, reply) {
-
         (0, _sendEmail2.default)(request.payload, data).then(function (data) {
-            return reply({ message: "Send Success", data: data });
+            console.log('====================================');
+            console.log({ msg: 'SEND_SUCCESS', data: data });
+            console.log('====================================');
+            reply({ message: "Send Success", data: data });
         }).catch(function (error) {
             return reply('Error to sent!');
         });
