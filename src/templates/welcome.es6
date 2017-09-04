@@ -1,256 +1,354 @@
 const welcome = (props) =>{
 
     return (
-        `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-        <html xmlns="http://www.w3.org/1999/xhtml">
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Welcome Email</title>
-        <!-- Designed by https://github.com/kaytcat -->
-        <!-- Robot header image designed by Freepik.com -->
-
-        <style type="text/css">
-        @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-
-        /* Take care of image borders and formatting */
-
-        img {
-            max-width: 600px;
-            outline: none;
-            text-decoration: none;
-            -ms-interpolation-mode: bicubic;
-        }
-
-        a {
-            text-decoration: none;
-            border: 0;
-            outline: none;
-            color: #bbbbbb;
-        }
-
-        a img {
-            border: none;
-        }
-
-        /* General styling */
-
-        td, h1, h2, h3  {
-            font-family: Helvetica, Arial, sans-serif;
-            font-weight: 400;
-        }
-
-        td {
-            text-align: center;
-        }
-
-        body {
-            -webkit-font-smoothing:antialiased;
-            -webkit-text-size-adjust:none;
-            width: 100%;
-            height: 100%;
-            color: #37302d;
-            background: #ffffff;
-            font-size: 16px;
-        }
-
-        table {
-            border-collapse: collapse !important;
-        }
-
-        .headline {
-            color: #ffffff;
-            font-size: 36px;
-        }
-
-        .force-full-width {
-        width: 100% !important;
-        }
-
-
-
-
-        </style>
-
-        <style type="text/css" media="screen">
-            @media screen {
-                /*Thanks Outlook 2013! http://goo.gl/XLxpyl*/
-                td, h1, h2, h3 {
-                font-family: 'Droid Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
-                }
-            }
-        </style>
-
-        <style type="text/css" media="only screen and (max-width: 480px)">
-            /* Mobile styles */
-            @media only screen and (max-width: 480px) {
-
-            table[class="w320"] {
-                width: 320px !important;
-            }
-
-
-            }
-        </style>
-        </head>
-        <body class="body" style="padding:0; margin:0; display:block; background:#ffffff; -webkit-text-size-adjust:none" bgcolor="#ffffff">
-        <table align="center" cellpadding="0" cellspacing="0" width="100%" height="100%" >
-        <tr>
-            <td align="center" valign="top" bgcolor="#ffffff"  width="100%">
-            <center>
-                <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" width="600" class="w320">
-                <tr>
-                    <td align="center" valign="top">
-
-                        <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" width="100%" style="margin:0 auto;">
-                        <tr>
-                            <td style="font-size: 30px; text-align:center;">
-                            <br>
-                                Awesome Co
-                            <br>
-                            <br>
-                            </td>
-                        </tr>
-                        </table>
-
-                        <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" width="100%" bgcolor="#4dbfbf">
-                        <tr>
-                            <td>
-                            <br>
-                            <img src="https://www.filepicker.io/api/file/Pv8CShvQHeBXdhYu9aQE" width="216" height="189" alt="robot picture">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="headline">
-                            Welcome ${ props.name }!
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                            <center>
-                                <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" width="60%">
-                                <tr>
-                                    <td style="color:#187272;">
-                                    <br>
-                                    To the awesomest place on earth! We're sure you will feel right at home with Awesome Co.
-                                    <br>
-                                    <br>
-                                    </td>
-                                </tr>
+        `<!doctype html>
+        <html>
+          <head>
+            <meta name="viewport" content="width=device-width" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>FoodCloud :: Validar</title>
+            <style>
+              /* -------------------------------------
+                  GLOBAL RESETS
+              ------------------------------------- */
+              img {
+                border: none;
+                -ms-interpolation-mode: bicubic;
+                max-width: 100%; }
+        
+              body {
+                background-color: #f6f6f6;
+                font-family: 'Helvetica','Arial',sans-serif;
+                -webkit-font-smoothing: antialiased;
+                font-size: 14px;
+                line-height: 1.4;
+                margin: 0;
+                padding: 0;
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%; }
+        
+              table {
+                border-collapse: separate;
+                mso-table-lspace: 0pt;
+                mso-table-rspace: 0pt;
+                width: 100%; }
+                table td {
+                  font-size: 14px;
+                  vertical-align: top; }
+        
+              /* -------------------------------------
+                  BODY & CONTAINER
+              ------------------------------------- */
+        
+              .body {
+                background-color: #f6f6f6;
+                width: 100%; }
+        
+              /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+              .container {
+                display: block;
+                Margin: 0 auto !important;
+                /* makes it centered */
+                max-width: 580px;
+                padding: 10px;
+                width: 580px; }
+        
+              /* This should also be a block element, so that it will fill 100% of the .container */
+              .content {
+                box-sizing: border-box;
+                display: block;
+                Margin: 0 auto;
+                max-width: 580px;
+                padding: 10px; }
+        
+              /* -------------------------------------
+                  HEADER, FOOTER, MAIN
+              ------------------------------------- */
+              .main {
+                background: #ffffff;
+                border-radius: 3px;
+                width: 100%; }
+        
+              .wrapper {
+                box-sizing: border-box;
+                padding: 20px; }
+        
+              .content-block {
+                padding-bottom: 10px;
+                padding-top: 10px;
+              }
+        
+              .footer {
+                clear: both;
+                Margin-top: 10px;
+                text-align: center;
+                width: 100%; }
+                .footer td,
+                .footer p,
+                .footer span,
+                .footer a {
+                  color: #999999;
+                  font-size: 12px;
+                  text-align: center; }
+        
+              /* -------------------------------------
+                  TYPOGRAPHY
+              ------------------------------------- */
+              h1,
+              h2,
+              h3,
+              h4 {
+                color: #000000;
+                font-weight: 400;
+                line-height: 1.4;
+                margin: 0;
+                Margin-bottom: 30px; }
+        
+              h1 {
+                font-size: 35px;
+                font-weight: 300;
+                text-align: center;
+                text-transform: capitalize; }
+        
+              p,
+              ul,
+              ol {
+                font-size: 16px;
+                font-weight: normal;
+                color:#4d4d4d;
+                margin: 0;
+                Margin-bottom: 15px; }
+                p li,
+                ul li,
+                ol li {
+                  list-style-position: inside;
+                  margin-left: 5px; }
+        
+              a {
+                color: #3498db;
+                text-decoration: underline; }
+        
+              /* -------------------------------------
+                  BUTTONS
+              ------------------------------------- */
+              .btn {
+                box-sizing: border-box;
+                width: 100%; }
+                .btn > tbody > tr > td {
+                  padding-bottom: 15px; }
+                .btn table {
+                  width: 100%; }
+                .btn table td {
+                  background-color: #ffffff;
+                  /* border-radius: 5px; */
+                  text-align: center; }
+                .btn a {
+                  background-color: #ffffff;
+                  border: solid 1px #3498db;
+                  border-radius: 5px;
+                  box-sizing: border-box;
+                  color: #3498db;
+                  cursor: pointer;
+                  display: inline-block;
+                  font-size: 14px;
+                  font-weight: bold;
+                  margin: 0;
+                  padding: 12px 25px;
+                  text-decoration: none;
+                  text-transform: capitalize; }
+        
+              .btn-primary table tbody td{
+                border: 1px solid #fff; }
+        
+               .title {
+                 background-color: #00B5CC;			
+               } 
+        
+              .btn-primary a {
+                background-color: #00B5CC;
+                border-color: #00B5CC;
+                color: #ffffff; }
+        
+              /* -------------------------------------
+                  OTHER STYLES THAT MIGHT BE USEFUL
+              ------------------------------------- */
+              .last {
+                margin-bottom: 0; }
+        
+              .first {
+                margin-top: 0; }
+        
+              .align-center {
+                text-align: center; }
+        
+              .align-right {
+                text-align: right; }
+        
+              .align-left {
+                text-align: left; }
+        
+              .clear {
+                clear: both; }
+        
+              .mt0 {
+                margin-top: 0; }
+        
+              .mb0 {
+                margin-bottom: 0; }
+        
+              .preheader {
+                color: transparent;
+                display: none;
+                height: 0;
+                max-height: 0;
+                max-width: 0;
+                opacity: 0;
+                overflow: hidden;
+                mso-hide: all;
+                visibility: hidden;
+                width: 0; }
+        
+              .powered-by a {
+                text-decoration: none; }
+        
+              hr {
+                border: 0;
+                border-bottom: 1px solid #f6f6f6;
+                Margin: 20px 0; }
+        
+              /* -------------------------------------
+                  RESPONSIVE AND MOBILE FRIENDLY STYLES
+              ------------------------------------- */
+              @media only screen and (max-width: 620px) {
+                table[class=body] h1 {
+                  font-size: 28px !important;
+                  margin-bottom: 10px !important; }
+                table[class=body] p,
+                table[class=body] ul,
+                table[class=body] ol,
+                table[class=body] td,
+                table[class=body] span,
+                table[class=body] a {
+                  font-size: 16px !important; }
+                table[class=body] .wrapper,
+                table[class=body] .article {
+                  padding: 10px !important; }
+                table[class=body] .content {
+                  padding: 0 !important; }
+                table[class=body] .container {
+                  padding: 0 !important;
+                  width: 100% !important; }
+                table[class=body] .main {
+                  border-left-width: 0 !important;
+                  border-radius: 0 !important;
+                  border-right-width: 0 !important; }
+                table[class=body] .btn table {
+                  width: 100% !important; }
+                table[class=body] .btn a {
+                  width: 100% !important; }
+                table[class=body] .img-responsive {
+                  height: auto !important;
+                  max-width: 100% !important;
+                  width: auto !important; }}
+        
+              /* -------------------------------------
+                  PRESERVE THESE STYLES IN THE HEAD
+              ------------------------------------- */
+              @media all {
+                .ExternalClass {
+                  width: 100%; }
+                .ExternalClass,
+                .ExternalClass p,
+                .ExternalClass span,
+                .ExternalClass font,
+                .ExternalClass td,
+                .ExternalClass div {
+                  line-height: 100%; }
+                .apple-link a {
+                  color: inherit !important;
+                  font-family: inherit !important;
+                  font-size: inherit !important;
+                  font-weight: inherit !important;
+                  line-height: inherit !important;
+                  text-decoration: none !important; }
+                .btn-primary a:hover {
+                  background-color: #34495e !important;
+                  border-color: #34495e !important; } }
+        
+            </style>
+          </head>
+          <body class="">
+            <table border="0" cellpadding="0" cellspacing="0" class="body">
+              <tr>
+                <td>&nbsp;</td>
+                <td class="container">
+                  <div class="content">
+        
+                    <!-- START CENTERED WHITE CONTAINER -->
+                    <span class="preheader">Validá tu e-mail para comenzar a utilizar FoodCloud</span>
+                    <table class="main">
+        
+                      <!-- START MAIN CONTENT AREA -->
+                      <tr>
+                        <td class="wrapper">
+                          <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td>
+                                <p style="text-align: center"><img src="https://www.foodcloud.com.ar/img/foodcloud_color.png" width="70px"></p>
+                                <hr/>
+                                <p>Hola ${ props.name },</p>
+                                <p>Gracias por registrarte en FoodCloud<br/>Para comenzar, te pedimos que valides tu dirección de e-mail.</p>
+                                <br/>
+                                <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+                                  <tbody>
+                                    <tr>
+                                      <td align="left">
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                          <tbody>
+                                            <tr>
+                                              <td> <a href="${ props.link }" target="_blank">Validar dirección de E-mail</a> </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
                                 </table>
-                            </center>
-
-                            </td>
+                                <br/>
+                                <p>Saludos,<br/>Equipo de FoodCloud</p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+        
+                    <!-- END MAIN CONTENT AREA -->
+                    </table>
+        
+                    <!-- START FOOTER -->
+                    <div class="footer">
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td class="content-block">
+                            <span class="apple-link">FoodCloud • <a href="https://www.foodcloud.com.ar/" target="_blank">www.foodcloud.com.ar</a><br/>Av. Alicia Moreau de Justo 2050, Of.307  - Buenos Aires - Argentina</span>
+                          </td>
                         </tr>
                         <tr>
-                            <td>
-                            <div><!--[if mso]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#178f8f">
-                                <w:anchorlock/>
-                                <center>
-                                <![endif]-->
-                                    <a href="http://"
-                            style="background-color:#178f8f;border-radius:4px;color:#ffffff;display:inline-block;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:bold;line-height:50px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Activate Account!</a>
-                                <!--[if mso]>
-                                </center>
-                                </v:roundrect>
-                            <![endif]--></div>
-                            <br>
-                            <br>
-                            </td>
+                          <td class="content-block powered-by">Hecho con ♥ en Buenos Aires</td>
                         </tr>
-                        </table>
-
-                        <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f5774e">
-                        <tr>
-                            <td style="background-color:#f5774e;" class="headline">
-                            <br>
-                            New Features
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <img src="https://www.filepicker.io/api/file/tjUsYjIHSDCkrrniLuev" width="145" height="89" alt="meter image">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                            <center>
-                                <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" width="60%">
-                                <tr>
-                                    <td style="color:#933f24;">
-                                    <br>
-                                    Faster download speeds for all users!
-                                    If speed is what you need, we‘ve got you covered!
-                                    <br><br>
-                                    </td>
-                                </tr>
-                                </table>
-                            </center>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <div><!--[if mso]>
-                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://" style="height:50px;v-text-anchor:middle;width:200px;" arcsize="8%" stroke="f" fillcolor="#ac4d2f">
-                                <w:anchorlock/>
-                                <center>
-                                <![endif]-->
-                                    <a href="http://"
-                            style="background-color:#ac4d2f;border-radius:4px;color:#ffffff;display:inline-block;font-family: Helvetica, Arial, sans-serif;font-size:16px;font-weight:bold;line-height:50px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Learn More</a>
-                                <!--[if mso]>
-                                </center>
-                                </v:roundrect>
-                            <![endif]--></div>
-                            <br>
-                            <br>
-                            </td>
-                        </tr>
-                        </table>
-
-                        <table style="margin: 0 auto;" cellpadding="0" cellspacing="0" class="force-full-width" bgcolor="#414141" style="margin: 0 auto">
-                        <tr>
-                            <td style="background-color:#414141;">
-                            <br>
-                            <br>
-                            <img src="https://www.filepicker.io/api/file/R4VBTe2UQeGdAlM7KDc4" alt="google+">
-                            <img src="https://www.filepicker.io/api/file/cvmSPOdlRaWQZnKFnBGt" alt="facebook">
-                            <img src="https://www.filepicker.io/api/file/Gvu32apSQDqLMb40pvYe" alt="twitter">
-                            <br>
-                            <br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="color:#bbbbbb; font-size:12px;">
-                            <a href="#">View in browser</a> | <a href="#">Unsubscribe</a> | <a href="#">Contact</a>
-                            <br><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="color:#bbbbbb; font-size:12px;">
-                            © 2014 All Rights Reserved
-                            <br>
-                            <br>
-                            </td>
-                        </tr>
-                        </table>
-
-
-
-
-
-                    </td>
-                </tr>
-                </table>
-            </center>
-            </td>
-        </tr>
-        </table>
-        </body>
-        </html>` 
+                      </table>
+                    </div>
+                    <!-- END FOOTER -->
+        
+                  <!-- END CENTERED WHITE CONTAINER -->
+                  </div>
+                </td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </body>
+        </html>
+        ` 
         )
 }
 
