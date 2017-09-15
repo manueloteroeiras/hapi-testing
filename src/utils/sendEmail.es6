@@ -15,7 +15,7 @@ const sendEmail = async (props, config) =>{
     const transporter = nodemailer.createTransport({ service: 'gmail', auth });
     
     let mailOptions = {
-        from: props.from || 'customservice@hapi.com',
+        from: (props.from) ? `${ props.from } <no-reply@foodcloud.com.ar>` : `FoodCloud <no-reply@foodcloud.com.ar>`,
         to: props.to || '', 
         subject: props.subject, // Subject line
         text: props.text,

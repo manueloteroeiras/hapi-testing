@@ -36,7 +36,7 @@ var sendEmail = function () {
                         };
                         transporter = _nodemailer2.default.createTransport({ service: 'gmail', auth: auth });
                         mailOptions = {
-                            from: props.from || 'customservice@hapi.com',
+                            from: props.from ? props.from + ' <no-reply@foodcloud.com.ar>' : 'FoodCloud <no-reply@foodcloud.com.ar>',
                             to: props.to || '',
                             subject: props.subject, // Subject line
                             text: props.text,
