@@ -15,7 +15,7 @@ const welcome = (props) =>{
                 border: none;
                 -ms-interpolation-mode: bicubic;
                 max-width: 100%; }
-        
+
               body {
                 background-color: #f6f6f6;
                 font-family: 'Helvetica','Arial',sans-serif;
@@ -26,7 +26,7 @@ const welcome = (props) =>{
                 padding: 0;
                 -ms-text-size-adjust: 100%;
                 -webkit-text-size-adjust: 100%; }
-        
+
               table {
                 border-collapse: separate;
                 mso-table-lspace: 0pt;
@@ -35,15 +35,15 @@ const welcome = (props) =>{
                 table td {
                   font-size: 14px;
                   vertical-align: top; }
-        
+
               /* -------------------------------------
                   BODY & CONTAINER
               ------------------------------------- */
-        
+
               .body {
                 background-color: #f6f6f6;
                 width: 100%; }
-        
+
               /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
               .container {
                 display: block;
@@ -52,7 +52,7 @@ const welcome = (props) =>{
                 max-width: 580px;
                 padding: 10px;
                 width: 580px; }
-        
+
               /* This should also be a block element, so that it will fill 100% of the .container */
               .content {
                 box-sizing: border-box;
@@ -60,7 +60,7 @@ const welcome = (props) =>{
                 Margin: 0 auto;
                 max-width: 580px;
                 padding: 10px; }
-        
+
               /* -------------------------------------
                   HEADER, FOOTER, MAIN
               ------------------------------------- */
@@ -68,16 +68,16 @@ const welcome = (props) =>{
                 background: #ffffff;
                 border-radius: 3px;
                 width: 100%; }
-        
+
               .wrapper {
                 box-sizing: border-box;
                 padding: 20px; }
-        
+
               .content-block {
                 padding-bottom: 10px;
                 padding-top: 10px;
               }
-        
+
               .footer {
                 clear: both;
                 Margin-top: 10px;
@@ -90,7 +90,7 @@ const welcome = (props) =>{
                   color: #999999;
                   font-size: 12px;
                   text-align: center; }
-        
+
               /* -------------------------------------
                   TYPOGRAPHY
               ------------------------------------- */
@@ -103,13 +103,13 @@ const welcome = (props) =>{
                 line-height: 1.4;
                 margin: 0;
                 Margin-bottom: 30px; }
-        
+
               h1 {
                 font-size: 35px;
                 font-weight: 300;
                 text-align: center;
                 text-transform: capitalize; }
-        
+
               p,
               ul,
               ol {
@@ -123,11 +123,11 @@ const welcome = (props) =>{
                 ol li {
                   list-style-position: inside;
                   margin-left: 5px; }
-        
+
               a {
                 color: #3498db;
                 text-decoration: underline; }
-        
+
               /* -------------------------------------
                   BUTTONS
               ------------------------------------- */
@@ -156,46 +156,46 @@ const welcome = (props) =>{
                   padding: 12px 25px;
                   text-decoration: none;
                   text-transform: capitalize; }
-        
+
               .btn-primary table tbody td{
                 border: 1px solid #fff; }
-        
+
                .title {
-                 background-color: #00B5CC;			
-               } 
-        
+                 background-color: #00B5CC;
+               }
+
               .btn-primary a {
                 background-color: #00B5CC;
                 border-color: #00B5CC;
                 color: #ffffff; }
-        
+
               /* -------------------------------------
                   OTHER STYLES THAT MIGHT BE USEFUL
               ------------------------------------- */
               .last {
                 margin-bottom: 0; }
-        
+
               .first {
                 margin-top: 0; }
-        
+
               .align-center {
                 text-align: center; }
-        
+
               .align-right {
                 text-align: right; }
-        
+
               .align-left {
                 text-align: left; }
-        
+
               .clear {
                 clear: both; }
-        
+
               .mt0 {
                 margin-top: 0; }
-        
+
               .mb0 {
                 margin-bottom: 0; }
-        
+
               .preheader {
                 color: transparent;
                 display: none;
@@ -207,15 +207,15 @@ const welcome = (props) =>{
                 mso-hide: all;
                 visibility: hidden;
                 width: 0; }
-        
+
               .powered-by a {
                 text-decoration: none; }
-        
+
               hr {
                 border: 0;
                 border-bottom: 1px solid #f6f6f6;
                 Margin: 20px 0; }
-        
+
               /* -------------------------------------
                   RESPONSIVE AND MOBILE FRIENDLY STYLES
               ------------------------------------- */
@@ -250,7 +250,7 @@ const welcome = (props) =>{
                   height: auto !important;
                   max-width: 100% !important;
                   width: auto !important; }}
-        
+
               /* -------------------------------------
                   PRESERVE THESE STYLES IN THE HEAD
               ------------------------------------- */
@@ -274,7 +274,7 @@ const welcome = (props) =>{
                 .btn-primary a:hover {
                   background-color: #34495e !important;
                   border-color: #34495e !important; } }
-        
+
             </style>
           </head>
           <body class="">
@@ -283,21 +283,21 @@ const welcome = (props) =>{
                 <td>&nbsp;</td>
                 <td class="container">
                   <div class="content">
-        
+
                     <!-- START CENTERED WHITE CONTAINER -->
                     <span class="preheader">Validá tu e-mail para comenzar a utilizar FoodCloud</span>
                     <table class="main">
-        
+
                       <!-- START MAIN CONTENT AREA -->
                       <tr>
                         <td class="wrapper">
                           <table border="0" cellpadding="0" cellspacing="0">
                             <tr>
                               <td>
-                                <p style="text-align: center"><img src="https://www.foodcloud.com.ar/img/foodcloud_color.png" width="70px"></p>
+                                <p style="text-align: center"><img src="https://s3.amazonaws.com/foodcore-cdn/email/logo_foodcloud_small.png" width="70px"></p>
                                 <hr/>
                                 <p>Hola ${ props.name },</p>
-                                <p>Gracias por registrarte en FoodCloud<br/>Para comenzar, te pedimos que valides tu dirección de e-mail.</p>
+                                <p>Gracias por registrarte en FoodCloud.<br/>Para comenzar, te pedimos que valides tu dirección de e-mail.</p>
                                 <br/>
                                 <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                   <tbody>
@@ -306,7 +306,7 @@ const welcome = (props) =>{
                                         <table border="0" cellpadding="0" cellspacing="0">
                                           <tbody>
                                             <tr>
-                                              <td> <a href="${ props.link }" target="_blank">Validar dirección de E-mail</a> </td>
+                                              <td> <a href="${ props.link }" style="background-color:#00B6FB;" target="_blank">Validar dirección de E-mail</a> </td>
                                             </tr>
                                           </tbody>
                                         </table>
@@ -321,16 +321,16 @@ const welcome = (props) =>{
                           </table>
                         </td>
                       </tr>
-        
+
                     <!-- END MAIN CONTENT AREA -->
                     </table>
-        
+
                     <!-- START FOOTER -->
                     <div class="footer">
                       <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                           <td class="content-block">
-                            <span class="apple-link">FoodCloud • <a href="https://www.foodcloud.com.ar/" target="_blank">www.foodcloud.com.ar</a><br/>Av. Alicia Moreau de Justo 2050, Of.307  - Buenos Aires - Argentina</span>
+                            <span class="apple-link">FoodCloud • <a href="https://www.foodcloud.com.ar/" target="_blank">www.foodcloud.com.ar</a><br/>Av. Alicia Moreau de Justo 2050 - Buenos Aires - Argentina</span>
                           </td>
                         </tr>
                         <tr>
@@ -339,7 +339,7 @@ const welcome = (props) =>{
                       </table>
                     </div>
                     <!-- END FOOTER -->
-        
+
                   <!-- END CENTERED WHITE CONTAINER -->
                   </div>
                 </td>
@@ -348,7 +348,7 @@ const welcome = (props) =>{
             </table>
           </body>
         </html>
-        ` 
+        `
         )
 }
 
