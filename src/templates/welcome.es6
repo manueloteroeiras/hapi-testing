@@ -294,7 +294,7 @@ const welcome = (props) =>{
                           <table border="0" cellpadding="0" cellspacing="0">
                             <tr>
                               <td>
-                                <p style="text-align: center;width:231px;height:64px "><img src="https://s3.amazonaws.com/foodcore-cdn/email/logo_foodcloud_small.png"></p>
+                                <p style="text-align: center;"><img style="height:64px" src="https://s3.amazonaws.com/foodcore-cdn/email/logo_foodcloud_small.png"></p>
                                 <hr/>
                                 <p>Hola ${ props.name },</p>
                                 <p>Gracias por registrarte en FoodCloud.<br/>Para comenzar, te pedimos que valides tu dirección de e-mail.</p>
