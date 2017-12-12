@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 // templeates
 import welcome from '../templates/welcome';
 import orderApproved from '../templates/orderApproved';
+import orderCanceled from '../templates/orderCanceled';
 
 
 
@@ -20,7 +21,7 @@ const sendEmail = async (props, config) =>{
         to: props.to || '',
         subject: props.subject, // Subject line
         text: props.text,
-        html: ( props.type == 'welcome' ) ? welcome(props) : props.type == 'approved' ? orderApproved(props) :props.html // html body
+        html: ( props.type == 'welcome' ) ? welcome(props) : props.type == 'approved' ? orderApproved(props) : (props.type == 'canceled') ? orderCanceled(props)  : props.html // html body
     }
 
     return await transporter.sendMail(mailOptions)

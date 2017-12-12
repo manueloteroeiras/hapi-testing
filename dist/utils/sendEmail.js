@@ -24,12 +24,13 @@ var _orderApproved = require('../templates/orderApproved');
 
 var _orderApproved2 = _interopRequireDefault(_orderApproved);
 
+var _orderCanceled = require('../templates/orderCanceled');
+
+var _orderCanceled2 = _interopRequireDefault(_orderCanceled);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // create reusable transporter object using the default SMTP transport
-
-
-// templeates
 var sendEmail = function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(props, config) {
         var auth, transporter, mailOptions;
@@ -47,7 +48,7 @@ var sendEmail = function () {
                             to: props.to || '',
                             subject: props.subject, // Subject line
                             text: props.text,
-                            html: props.type == 'welcome' ? (0, _welcome2.default)(props) : props.type == 'approved' ? (0, _orderApproved2.default)(props) : props.html // html body
+                            html: props.type == 'welcome' ? (0, _welcome2.default)(props) : props.type == 'approved' ? (0, _orderApproved2.default)(props) : props.type == 'canceled' ? (0, _orderCanceled2.default)(props) : props.html // html body
                         };
                         _context.next = 5;
                         return transporter.sendMail(mailOptions);
@@ -68,4 +69,5 @@ var sendEmail = function () {
     };
 }();
 
+// templeates
 exports.default = sendEmail;
