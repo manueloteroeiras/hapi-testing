@@ -20,11 +20,18 @@ var _welcome = require('../templates/welcome');
 
 var _welcome2 = _interopRequireDefault(_welcome);
 
+var _orderApproved = require('../templates/orderApproved');
+
+var _orderApproved2 = _interopRequireDefault(_orderApproved);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // create reusable transporter object using the default SMTP transport
+
+
+// templeates
 var sendEmail = function () {
-    var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(props, config) {
+    var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(props, config) {
         var auth, transporter, mailOptions;
         return _regenerator2.default.wrap(function _callee$(_context) {
             while (1) {
@@ -40,7 +47,7 @@ var sendEmail = function () {
                             to: props.to || '',
                             subject: props.subject, // Subject line
                             text: props.text,
-                            html: props.type == 'welcome' ? (0, _welcome2.default)(props) : props.html // html body
+                            html: props.type == 'welcome' ? (0, _welcome2.default)(props) : props.type == 'approved' ? (0, _orderApproved2.default)(props) : props.html // html body
                         };
                         _context.next = 5;
                         return transporter.sendMail(mailOptions);
@@ -61,5 +68,4 @@ var sendEmail = function () {
     };
 }();
 
-// templeates
 exports.default = sendEmail;
