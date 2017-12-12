@@ -44,11 +44,10 @@ const orderApproved = (props) =>{
             <tr>
               <td style="padding:25px 15px 0px 15px">
                 <span style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#8A8A8A;line-height:24px;font-weight:200;display:block">DETALLE</span>
-                <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400">
                   ${ order.products.map(product =>{
-                    return `${ product.name }<br />`
-                  }) }
-              </span>
+                    return `<span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400">${ product.name }</span><br />`
+                  })
+                }
               </td>
             </tr>
             <!-- payment -->
