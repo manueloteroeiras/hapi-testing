@@ -61,6 +61,27 @@ server.route({
     }
 });
 
+server.route({
+    method: 'POST',
+    path: '/payment/success',
+    handler: function handler(request, reply) {
+        console.log('====================================');
+        console.log(request.payload);
+        console.log('====================================');
+        (0, _sendEmail2.default)(request.payload, _config2.default).then(function (data) {
+            console.log('====================================');
+            console.log({ msg: 'SEND_SUCCESS', data: data });
+            console.log('====================================');
+            reply({ message: "Send Success", data: data });
+        }).catch(function (error) {
+            console.log('====================================');
+            console.log(error);
+            console.log('====================================');
+            reply('Error to sent!');
+        });
+    }
+});
+
 // Start the server
 server.start(function (err) {
     if (err) throw err;
