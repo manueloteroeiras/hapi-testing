@@ -51,6 +51,16 @@ const orderCanceled = (props) =>{
                 <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400"><i>"${ reason }"</i></span>
               </td>
             </tr>
+
+            ${
+              order.paymentMethod.type == 'Efectivo' ? null :
+              `<tr>
+                <td style="padding:25px 15px 0px 15px">
+                  <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400">No se generarán cargos en tu tarjeta</span>
+                </td>
+              </tr>`
+            }
+
             <!-- signature -->
             <tr>
                 <td style="padding:50px 15px 15px 15px">

@@ -37,7 +37,7 @@ const orderApproved = (props) =>{
             <!-- title -->
             <tr>
               <td style="padding:25px 15px 0px 15px">
-                <span style="font-family:Arial, Helvetica, sans-serif;font-size:16px;color:#494949;line-height:24px;font-weight:600">Hola ${ user.firstname },<br />${ subsidiary.name } confirmó tu pedido #${ order.orderID } para las ${ moment(order.deliveredDate).subtract(3, 'hour').format('HH:mm A') } Hs.</span>
+                <span style="font-family:Arial, Helvetica, sans-serif;font-size:16px;color:#494949;line-height:24px;font-weight:600">Hola ${ user.firstname },<br />${ subsidiary.name } confirmó tu pedido #${ order.orderID } para las ${ moment(order.deliveredDate).subtract(3, 'hour').format('HH:mm A') }</span>
               </td>
             </tr>
             <!-- detail -->
