@@ -43,22 +43,18 @@ const orderCanceled = (props) =>{
             <!-- detail -->
             <tr>
               <td style="padding:25px 15px 0px 15px">
-                <span style="font-family:Arial, Helvetica, sans-serif;font-size:16px;color:#494949;line-height:24px;font-weight:600">El local indicó</span>
+                <span style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#8A8A8A;line-height:24px;font-weight:200;display:block">MENSAJE DEL LOCAL</span>
+                <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400;font-style:italic;display:block">"${ reason }"</span>
               </td>
             </tr>
-            <tr>
-              <td style="padding:25px 15px 0px 15px">
-                <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400"><i>"${ reason }"</i></span>
-              </td>
-            </tr>
-
             ${
               order.paymentMethod.type == 'Efectivo' ? null :
-              `<tr>
-                <td style="padding:25px 15px 0px 15px">
-                  <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400">No se generarán cargos en tu tarjeta</span>
-                </td>
-              </tr>`
+              ` <tr>
+                  <td style="padding:25px 15px 0px 15px">
+                    <span style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#8A8A8A;line-height:24px;font-weight:200;display:block">PAGO</span>
+                    <span style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#494949;line-height:24px;font-weight:400;display:block">El pago no ha sido procesado. No se generarán cargos en tu tarjeta.</span>
+                  </td>
+                </tr>`
             }
 
             <!-- signature -->
