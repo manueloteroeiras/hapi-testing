@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "babel -d dist/ src/",
     "dev": "npm run compile && node dist/index.js",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "log" : "heroku logs --app micro-email-dispatcher -t"
   },
   "dependencies": {
     "axios": "^0.15.3",

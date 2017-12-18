@@ -13,8 +13,8 @@ const data = {
 const server = new Hapi.Server();
 
 server.connection({
-    host: '0.0.0.0',
-    // host: 'localhost',
+    // host: '0.0.0.0',
+    host: 'localhost',
     port: process.env.PORT || 8000,
     routes : {
         cors : true
@@ -33,9 +33,6 @@ server.route({
     method: 'POST',
     path:'/send-email',
     handler: (request, reply)=> {
-        console.log('====================================');
-        console.log(request.payload);
-        console.log('====================================');
         sendEmail(request.payload, config )
         .then((data)=> {
             console.log('====================================');
