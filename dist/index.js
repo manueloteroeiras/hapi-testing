@@ -22,8 +22,8 @@ var data = {
 };var server = new _hapi2.default.Server();
 
 server.connection({
-    // host: '0.0.0.0',
-    host: 'localhost',
+    host: '0.0.0.0',
+    // host: 'localhost',
     port: process.env.PORT || 8000,
     routes: {
         cors: true
