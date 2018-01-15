@@ -172,7 +172,7 @@ const invite = (props) =>{
               `<tr>
                 <td class="participants">
                   <span class="subtitle">OTROS PARTICIPANTES</span>
-                  ${ renderParticipants(participants).replace(/,/g, '') }
+                  ${ renderParticipants(participants) }
                 </td>
               </tr>` 
             }
@@ -204,7 +204,7 @@ const invite = (props) =>{
 }
 
 const renderParticipants = (participants) =>{
-  return participants.map((participant) => `${ participant.name }<br />`)
+  return participants.map((participant) => `${ participant.name } <br />`)
 }
 
 export default invite;
