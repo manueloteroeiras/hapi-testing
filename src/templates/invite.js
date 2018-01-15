@@ -156,7 +156,7 @@ const invite = (props) =>{
                       <span>${ moment(date).format('dddd') } ${ moment(date).format('L') } ${ moment(date).format('LT') }</span>
                     </td>
                     <td style="width:136px">
-                      <a href="#" class="btn">INGRESAR</a>
+                      <a href="https://meeting.insideone.cloud/${ code }" class="btn">INGRESAR</a>
                     </td>
                   </tr>
                 </table>
