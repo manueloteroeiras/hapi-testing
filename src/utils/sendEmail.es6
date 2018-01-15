@@ -5,6 +5,8 @@ import welcome from '../templates/welcome';
 import orderApproved from '../templates/orderApproved';
 import orderCanceled from '../templates/orderCanceled';
 
+import invite from '../templates/invite';
+
 
 
     // create reusable transporter object using the default SMTP transport
@@ -21,7 +23,7 @@ const sendEmail = async (props, config) =>{
         to: props.to || '',
         subject: props.subject, // Subject line
         text: props.text,
-        html: ( props.type == 'welcome' ) ? welcome(props) : props.type == 'approved' ? orderApproved(props) : (props.type == 'canceled') ? orderCanceled(props)  : props.html // html body
+        html: ( props.type == 'welcome' ) ? welcome(props) : props.type == 'approved' ? orderApproved(props) : (props.type == 'canceled') ? orderCanceled(props)  : (props.type === 'invite') ? invite(props) : props.html // html body
     }
 
     return await transporter.sendMail(mailOptions)
