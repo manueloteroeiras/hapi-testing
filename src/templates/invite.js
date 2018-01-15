@@ -1,5 +1,9 @@
+import moment from 'moment';
+
+moment.lang('es')
+
 const invite = (props) =>{
-    let { code, name, username, owner } = props.payload;
+    let { code, name, username, owner, participants, date } = props.payload;
     return(`
     <!doctype html>
     <html>
@@ -149,7 +153,7 @@ const invite = (props) =>{
                   <tr>
                     <td>
                       <span class="meetingTitle">${ name }</span><br/>
-                      <span>Miércoles 02/01 03:30 PM</span>
+                      <span>${ moment(date).format('dddd') } ${ moment(date).format('L') } ${ moment(date).format('LT') }</span>
                     </td>
                     <td style="width:136px">
                       <a href="#" class="btn">INGRESAR</a>
@@ -160,14 +164,13 @@ const invite = (props) =>{
             </tr>
             <tr>
               <td class="link">
-                <span>Podés copiar y pegar el siguiente enlace para ingresar desde tu navegador<br/><a href="https://meetings.insideone.cloud/invite/${ code }">https://meetings.insideone.cloud/invite/${ code }</a></span>
+                <span>Podés copiar y pegar el siguiente enlace para ingresar desde tu navegador<br/><a href="https://meeting.insideone.cloud/${ code }">https://meeting.insideone.cloud/${ code }</a></span>
               </td>
             </tr>
             <tr>
               <td class="participants">
                 <span class="subtitle">OTROS PARTICIPANTES</span>
-                Alex Kravchuk<br />
-                Alberto Kravchuk
+                ${ renderParticipants(participants) }
               </td>
             </tr>
             <tr>
@@ -187,14 +190,18 @@ const invite = (props) =>{
             </tr>
             <tr>
               <td class="labels">
-                <a href="https://meetings.insideone.cloud/8435" target="_blank"><img src="https://s3-sa-east-1.amazonaws.com/insideone/appstore.png" width="117px" title="Descargar la app desde AppStore"></a>
-                <a href="https://meetings.insideone.cloud/8435" target="_blank"><img src="https://s3-sa-east-1.amazonaws.com/insideone/googleplay.png" width="117px" title="Descargar la app desde Google Play"></a>
+                <a href="https://meeting.insideone.cloud/${ code }" target="_blank"><img src="https://s3-sa-east-1.amazonaws.com/insideone/appstore.png" width="117px" title="Descargar la app desde AppStore"></a>
+                <a href="https://meeting.insideone.cloud/${ code }" target="_blank"><img src="https://s3-sa-east-1.amazonaws.com/insideone/googleplay.png" width="117px" title="Descargar la app desde Google Play"></a>
               </td>
             </tr>
         </table> 
       </body>
     </html>
     `)
+}
+
+const renderParticipants = (participants) =>{
+  return participants.map((participant) => `${ participant.name }<br />`)
 }
 
 export default invite;
