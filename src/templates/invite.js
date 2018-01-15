@@ -167,12 +167,15 @@ const invite = (props) =>{
                 <span>Podés copiar y pegar el siguiente enlace para ingresar desde tu navegador<br/><a href="https://meeting.insideone.cloud/${ code }">https://meeting.insideone.cloud/${ code }</a></span>
               </td>
             </tr>
-            <tr>
-              <td class="participants">
-                <span class="subtitle">OTROS PARTICIPANTES</span>
-                ${ renderParticipants(participants) }
-              </td>
-            </tr>
+            ${ 
+              participants.length < 1 ? null : 
+              `<tr>
+                <td class="participants">
+                  <span class="subtitle">OTROS PARTICIPANTES</span>
+                  ${ renderParticipants(participants).replace(/,/g, '') }
+                </td>
+              </tr>` 
+            }
             <tr>
               <td class="separator"></td>
             </tr>
