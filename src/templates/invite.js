@@ -196,3 +196,5 @@ const invite = (props) =>{
     </html>
     `)
 }
+
+export default invite;
