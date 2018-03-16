@@ -7,9 +7,6 @@ import orderCanceled from '../templates/orderCanceled';
 
 import invite from '../templates/invite';
 
-
-
-    // create reusable transporter object using the default SMTP transport
 const sendEmail = async (props, config) =>{
 
     let auth = {
